@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.haiyu.manager.dao.BaseBuyerMapper">
+    <resultMap id="BaseResultMap" type="com.haiyu.manager.pojo.BaseBuyer">
+        <id column="buyer_id" jdbcType="INTEGER" property="buyerId" />
+        <result column="buyer_name" jdbcType="VARCHAR" property="buyerName"/>
+        <result column="buyer_pwd" jdbcType="VARCHAR" property="buyerPwd"/>
+        <result column="buyer_gender" jdbcType="VARCHAR" property="buyerGender"/>
+        <result column="buyer_address" jdbcType="VARCHAR" property="buyerAddress"/>
+        <result column="buyer_phone" jdbcType="VARCHAR" property="buyerPhone"/>
+        <result column="buyer_birth" jdbcType="VARCHAR" property="buyerBirth"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+    </resultMap>
+    <sql id="baseColumn">
+    buyer_id,buyer_name,buyer_owd,buyer_gender,buyer_address,buyer_phone,buyer_birth,create_time,update_time
+    </sql>
+    <select id="getBuyerList" resultMap="BaseResultMap">
+        SELECT *  from base_buyer;
+    </select>
+    <select id="getBuyerById" resultMap="BaseResultMap" >
+         select * from base_buyer where buyer_id = #{buyerId};
+    </select>
+    <insert id="addBuyer">
+        insert into base_buyer values(
+            #{buyerId, jdbcType=INTEGER},
+            #{buyerName, jdbcType=VARCHAR},
+            #{buyerPwd, jdbcType=VARCHAR},
+            #{buyerGender, jdbcType=VARCHAR},
+            #{buyerAddress, jdbcType=VARCHAR},
+            #{buyerPhone, jdbcType=VARCHAR},
+            #{buyerBirth, jdbcType=VARCHAR},
+            now(),
+            now()
+        );
+    </insert>
+    <update id="updateBuyer" >
+        update base_buyer set
+        <if test="buyerName != null and buyerName != ''">
+            buyer_name = #{buyerName, jdbcType=VARCHAR},
+        </if>
+        <if test="buyerPwd != null and buyerPwd != ''">
+            buyer_pwd = #{buyerPwd, jdbcType=VARCHAR},
+        </if>
+        <if test="buyerGender != null and buyerGender !=''">
+            buyer_gender =#{buyerGender,jdbcType=VARCHAR},
+        </if>
+        <if test="buyerAdress != null and buyerAdress !=''">
+            buyer_address=#{buyerAddress,jdbcType=VARCHAR},
+        </if>
+        <if test="buyerEmail != null and buyerEmail !=''">
+            buyer_phone=#{buyerPhone,jdbcType=VARCHAR},
+        </if>
+        <if test="buyerBirth != null and buyerBirth !=''">
+            buyer_birth=#{buyerBirth, jdbcType=VARCHAR},
+        </if>
+        update_time=now()
+        where buyer_id=#{buyerId};
+    </update>
+    <delete id="deleteBuyer" >
+        delete from base_buyer where buyer_id=#{buyerId};
+    </delete>
+</mapper>

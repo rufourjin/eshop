@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.haiyu.manager.dao.BaseOrderMapper">
+    <resultMap id="BaseResultMap" type="com.haiyu.manager.pojo.BaseOrder">
+        <id column="order_id" jdbcType="INTEGER" property="orderId"/>
+        <result column="o_buyer_id" jdbcType="INTEGER" property="ordBuyerId"></result>
+        <result column="o_product_id" jdbcType="INTEGER" property="ordProductId"></result>
+        <result column="order_time" jdbcType="TIMESTAMP" property="orderTime"></result>
+        <association property="baseBuyer" javaType="com.haiyu.manager.pojo.BaseBuyer">
+            <id column="buyer_id" jdbcType="INTEGER" property="buyerId" />
+            <result column="buyer_name" jdbcType="VARCHAR" property="buyerName"/>
+            <result column="buyer_pwd" jdbcType="VARCHAR" property="buyerPwd"/>
+            <result column="buyer_gender" jdbcType="VARCHAR" property="buyerGender"/>
+            <result column="buyer_address" jdbcType="VARCHAR" property="buyerAddress"/>
+            <result column="buyer_phone" jdbcType="VARCHAR" property="buyerPhone"/>
+            <result column="buyer_birth" jdbcType="VARCHAR" property="buyerBirth"/>
+            <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+            <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+        </association>
+        <association property="baseProduct" javaType="com.haiyu.manager.pojo.BaseProduct">
+            <id column="product_id" jdbcType="INTEGER" property="productId"/>
+            <result column="product_name" jdbcType="VARCHAR" property="productName"/>
+            <result column="product_price" jdbcType="DECIMAL" property="productPrice"/>
+            <result column="product_intro" jdbcType="VARCHAR" property="productIntro"/>
+            <result column="p_create_time" jdbcType="TIMESTAMP" property="proCreateTime"/>
+            <result column="p_update_time" jdbcType="TIMESTAMP" property="proUpdateTime"/>
+        </association>
+    </resultMap>
+    <select id="getOrderList" resultMap="BaseResultMap">
+        select order_id,order_time,
+        product_id,product_name,product_price,product_intro,p_create_time,
+        buyer_id,buyer_name,buyer_gender,buyer_phone,buyer_address
+        from base_order
+        join base_product on o_product_id= product_id
+        join base_buyer on o_buyer_id=buyer_id;
+    </select>
+    <select id="sumOrder" resultType="int">
+        select count(*) from base_order;
+    </select>
+    <select id="sumMoney" resultType="BigDecimal">
+        select sum(product_price) from base_product;
+    </select>
+    <select id="getOrderById" resultMap="BaseResultMap" >
+         select * from base_order where order_id = #{orderId};
+    </select>
+    <delete id="deleteOrder">
+        delete from base_order where order_id=#{orderId};
+    </delete>
+</mapper>

@@ -9,7 +9,7 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-
+//@Repository--存储库
 @Repository
 public interface BaseAdminUserMapper extends MyMapper<BaseAdminUser> {
 

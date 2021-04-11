@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.haiyu.manager.dao.BaseProductMapper">
+   <resultMap id="BaseResultMap" type="com.haiyu.manager.pojo.BaseProduct">
+       <id column="product_id" jdbcType="INTEGER" property="productId"/>
+       <result column="product_name" jdbcType="VARCHAR" property="productName"/>
+       <result column="product_price" jdbcType="DECIMAL" property="productPrice"/>
+       <result column="product_intro" jdbcType="VARCHAR" property="productIntro"/>
+       <result column="p_create_time" jdbcType="TIMESTAMP" property="proCreateTime"/>
+       <result column="p_update_time" jdbcType="TIMESTAMP" property="proUpdateTime"/>
+   </resultMap>
+    <select id="getProductList" resultMap="BaseResultMap">
+        select * from base_product;
+    </select>
+    <select id="getProductById" resultMap="BaseResultMap">
+        select * from base_product where product_id = #{productId};
+    </select>
+    <insert id="addProduct">
+        insert into base_product values (
+            #{productId,jdbcType=INTEGER}
+            #{productName, jdbcType=VARCHAR},
+            #{productPrice, jdbcType=DECIMAL},
+            #{productIntro, jdbcType=VARCHAR},
+            now(),
+            now()
+        )
+    </insert>
+    <update id="updateProduct">
+        update base_product set
+        <if test="buyerName != null and buyerName != ''">
+            product_name = #{productName, jdbcType=VARCHAR},
+        </if>
+        <if test="buyerPwd != null and buyerPwd != ''">
+            productPrice = #{productPrice, jdbcType=DECIMAL},
+        </if>
+        <if test="buyerGender != null and buyerGender !=''">
+            productIntro =#{productIntro, jdbcType=VARCHAR},
+        </if>
+        p_update_time=now()
+        where product_id=#{productId};
+    </update>
+    <delete id="deleteProduct">
+        delete from base_product where product_id=#{productId};
+    </delete>
+</mapper>
