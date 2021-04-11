@@ -4,43 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82a69f2d-1662-4c9a-a35c-c5c2a89f6e0f" name="Default Changelist" comment="buyer&#10;product&#10;order">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/haiyu/manager/controller/system/BuyerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/haiyu/manager/controller/system/OrderController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/haiyu/manager/controller/system/ProductController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/haiyu/manager/dao/BaseBuyerMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/haiyu/manager/dao/BaseOrderMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/haiyu/manager/dao/BaseProductMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/haiyu/manager/pojo/BaseBuyer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/haiyu/manager/pojo/BaseOrder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/haiyu/manager/pojo/BaseProduct.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/haiyu/manager/service/impl/BuyerServiceImp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/haiyu/manager/service/impl/OrderServiceImp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/haiyu/manager/service/impl/ProductServiceImp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/BaseBuyerMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/BaseOrderMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/BaseProductMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sql/base_buyer.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sql/base_order.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sql/base_product.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/buyer/buyerManage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/order/orderManage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/product/productManage.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="82a69f2d-1662-4c9a-a35c-c5c2a89f6e0f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/haiyu/manager/dao/BaseAdminUserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haiyu/manager/dao/BaseAdminUserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/haiyu/manager/dto/AdminUserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haiyu/manager/dto/AdminUserDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/haiyu/manager/pojo/BaseAdminUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/haiyu/manager/pojo/BaseAdminUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/error.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/error.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/haiyu/manager/common/utils/ShiroFilterUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/haiyu/manager/common/utils/ShiroFilterUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/haiyu/manager/filter/KickoutSessionFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/haiyu/manager/filter/KickoutSessionFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/haiyu/manager/pojo/BaseAdminUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/haiyu/manager/pojo/BaseAdminUser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/error.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/error.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/home.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -151,8 +116,16 @@
       <workItem from="1618043071369" duration="8452000" />
       <workItem from="1618100587096" duration="26398000" />
       <workItem from="1618137272762" duration="2010000" />
-      <workItem from="1618139803302" duration="591000" />
+      <workItem from="1618139803302" duration="937000" />
     </task>
+    <task id="LOCAL-00001" summary="buyer&#10;product&#10;order">
+      <created>1618140571060</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1618140571060</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
